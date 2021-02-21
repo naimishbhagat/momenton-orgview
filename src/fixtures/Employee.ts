@@ -1,5 +1,7 @@
-{
-    "employees":[
+import { EmployeeType } from '../services/employeeApi';
+
+export const EmployeeData: EmployeeType[] = 
+[
     {
         "id":100,
         "name": "Alan",
@@ -30,5 +32,4 @@
         "name": "David",
         "manager_id": 400
     }
-]   
-}
+];
