@@ -16,7 +16,6 @@ test("renders organisation structure correctly", async () => {
 test("Fetch Employeedata correctly", async () => {
   await act(async () => {
     const { getByText } = render(<Hierarchy employees={EmployeeData} />);
-
     await waitFor(() => [expect(getByText("Jamie")).toBeInTheDocument()]);
   });
 });

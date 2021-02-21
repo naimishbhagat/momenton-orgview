@@ -15,9 +15,7 @@ function Employees() {
   };
 
   useEffect(() => {
-    getData()
-      .then((res) => setData(res))
-      .catch((err) => setError(err));
+    getData().then((res) => setData(res));
   }, []);
 
   if (loading) {
@@ -29,7 +27,7 @@ function Employees() {
 
   return (
     <div data-testid="employeeContainer">
-      {data.length > 0 && <Hierarchy employees={data} />}
+      {data && <Hierarchy employees={data} />}
     </div>
   );
 }
