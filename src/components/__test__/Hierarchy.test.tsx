@@ -8,7 +8,7 @@ import { getEmployeeData, EmployeeType } from "../../services/employeeApi";
 test("renders organisation structure correctly", async () => {
   await act(async () => {
     const { getByTestId } = render(<Hierarchy employees={EmployeeData} />);
-    console.log(getByTestId);
+
     await waitFor(() => [expect(getByTestId("OrgView")).toBeInTheDocument()]);
   });
 });
@@ -16,7 +16,7 @@ test("renders organisation structure correctly", async () => {
 test("Fetch Employeedata correctly", async () => {
   await act(async () => {
     const { getByText } = render(<Hierarchy employees={EmployeeData} />);
-    console.log(getByText);
+
     await waitFor(() => [expect(getByText("Jamie")).toBeInTheDocument()]);
   });
 });
