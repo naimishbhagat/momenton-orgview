@@ -27,7 +27,7 @@ function Employees() {
 
   return (
     <div data-testid="employeeContainer">
-      {data && <Hierarchy employees={data} />}
+      {data.length > 0 && <Hierarchy employees={data} />}
     </div>
   );
 }
