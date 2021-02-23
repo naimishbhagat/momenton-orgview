@@ -1,19 +1,19 @@
-import React,{useEffect} from 'react'
-import createTreeData from '../utils/TreeData';
-import TreeView from '../utils/TreeView';
-import './Hierarchy.css'
+import React, { useEffect } from "react";
+import createTreeData from "../utils/TreeData";
+import "./Hierarchy.css";
+import TreeUL from "./TreeUL";
 
-function Hierarchy({employees}) {
-    const sortData = employees.sort((a, b) => a.id - b.id);
-    const employeeTree = createTreeData(sortData);
-  
-    useEffect(() => {       
-       TreeView(employeeTree,document.querySelector('#OrgView'))
-    }, []) 
- 
-    return <div data-testid="OrgView" id="OrgView"></div>
-    
-    
+function Hierarchy({ employees }) {
+  const sortData = employees.sort((a, b) => a.id - b.id);
+  const OrgTree = createTreeData(sortData);
+
+  return (
+    <div data-testid="OrgView" id="OrgView">
+      {OrgTree.map((emp, id) => {
+        return <TreeUL key={id} data={emp} />;
+      })}
+    </div>
+  );
 }
 
-export default Hierarchy
+export default Hierarchy;
